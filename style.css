@@ -7,7 +7,6 @@ body {
     width: 25vw;
 }
 
-
 .home ul li {
     display: flex;
     gap: 15px;
@@ -72,6 +71,31 @@ body {
     padding: 8px 20px;
 }
 
+.songlist{
+    overflow-y: scroll;
+    height: 61vh;
+}
+
+.songlist ul{
+    padding: 0px 10px;
+    margin: 5px;
+}
+
+.songlist ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 35px;
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
+    margin: 10px 0px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.songlist div{
+    width: 155px;
+}
+
 .nav img {
     width: 14px;
     margin: 10px 8px;
@@ -132,7 +156,7 @@ button{
     position: relative;
 }
 
-.play{
+.cardplay{
     position: absolute;
     bottom: 60px;
     right: 20px;
@@ -151,9 +175,10 @@ button{
     /* fill color of the circle */
 }
 
-.card:hover .play{
+.card:hover .cardplay{
     opacity: 1;
-    bottom: 90px;
+    bottom: 100px;
+    cursor: pointer;
 }
 
 .card img {
@@ -164,41 +189,97 @@ button{
 .playbar{
     position: absolute;
     bottom: 0;
-    background-color: green;
-    width: 71vw;
-    padding: 8px;
-    margin-bottom: 7px;
+    background-color: #272525;
+    width: 70vw;
+    padding: 15px;
     border-radius: 7px;
 }
 
+.songinfo{
+    display: flex;
+}
+
 .songbtn{
+    width: calc(25vw - 0px); /* Adjusting width */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centering the song buttons */
     gap: 16px;
+    position: relative;
+    bottom: 7px;
 }
 
-.songlist{
-    overflow-y: scroll;
-    height: 61vh;
+.songname{
+    width: calc(6vw + 280px); /* Adjusting width */
+    position: relative;
+    bottom: 1px;
 }
 
-.songlist ul{
-    padding: 0px 10px;
-    margin: 5px;
+.songtime{
+    width: calc(5vw + 50px); /* Adjusting width */
+    position: relative;
+    bottom: 1px;
+    left: auto; /* Removing left positioning */
+    margin-left: auto; /* Pushing song time to the right */
 }
 
-.songlist ul li{
-    list-style-type: decimal;
-    display: flex;
-    gap: 35px;
-    border: 1px solid cornflowerblue;
+
+.songbtn img{
     cursor: pointer;
-    margin: 10px 0px;
-    padding: 12px;
-    border-radius: 5px;
 }
 
-.songlist div{
-    width: 155px;
+.seekbar{
+    width: 95%;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 7px;
+    cursor: pointer;
 }
 
+.circle{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: -5px;
+    border-radius: 50%;
+    background-color: rgb(209, 73, 221);
+    left: 0%;
+    transition: left 0.5s;
+    cursor: pointer;
+}
+
+@media (max-width: 1460px) {
+    .left{
+        position: absolute;
+        left: -100%;
+        transition: all 0.3s;
+        z-index: 1;
+    }
+
+    .right{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .playbar{
+        width: 94vw;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .left{
+        position: absolute;
+        left: -100%;
+        transition: all 0.3s;
+        z-index: 1;
+    }
+
+    .right{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .playbar{
+        width: 90vw;
+    }
+  }
